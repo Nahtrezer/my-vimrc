@@ -31,6 +31,7 @@ call vundle#end()
 
 filetype plugin indent on
 
+"Let's get ride of ARROWS
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
