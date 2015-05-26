@@ -13,7 +13,7 @@ endif
 set number
 set numberwidth=3
 
-" Settings for Vundle
+"------------------Settings for Vundle------------------
 
 if has("win32")
 	set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -25,6 +25,8 @@ endif
 
 call vundle#begin(path)
 
+"------------------Vundle plugins BEGIN------------------
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
@@ -34,12 +36,13 @@ Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
-" Vundle settings ends here
+"------------------Vundle plugins END------------------
 
 filetype plugin indent on
 syntax on
 
-" Global settings for all files (but may be overridden in ftplugin).
+"------------------Global settings for indenting------------------
+
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
@@ -49,3 +52,8 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+"------------------Settings for NERDTree------------------
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+autocmd VimEnter * NERDTree
+map <F3> :NERDTreeToggle<CR>
