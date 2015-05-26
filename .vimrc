@@ -1,4 +1,4 @@
-"HERE BE DRAGONS!!!
+" HERE BE DRAGONS!!!
 
 set nocompatible
 filetype off
@@ -12,6 +12,8 @@ endif
 
 set number
 set numberwidth=3
+
+" Settings for Vundle
 
 if has("win32")
 	set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -29,9 +31,17 @@ Plugin 'bling/vim-airline'
 
 call vundle#end()
 
-filetype plugin indent on
+" Vundle settings ends here
 
-"Let's get ride of ARROWS
+filetype plugin indent on
+syntax on
+
+" Global settings for all files (but may be overridden in ftplugin).
+set tabstop=2
+set shiftwidth=2
+set noexpandtab
+
+" Let's get ride of ARROWS
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
