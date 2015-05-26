@@ -57,3 +57,7 @@ noremap <Right> <NOP>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 autocmd VimEnter * NERDTree
 map <F3> :NERDTreeToggle<CR>
+
+
+"------------------Settings for vim-venv------------------
+let g:virtualenv_directory = 'd:\dev\venvs\'
