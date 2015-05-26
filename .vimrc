@@ -28,6 +28,9 @@ call vundle#begin(path)
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+"Plugin 'klen/python-mode'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
