@@ -47,6 +47,9 @@ set tabstop=2
 set shiftwidth=2
 set noexpandtab
 
+"------------------Global settings for indenting------------------
+inoremap <C-Space> <C-x><C-o>
+
 " Let's get ride of ARROWS
 noremap <Up> <NOP>
 noremap <Down> <NOP>
