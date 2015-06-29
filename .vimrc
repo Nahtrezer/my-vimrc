@@ -2,12 +2,13 @@
 
 set nocompatible
 filetype off
+set noswapfile
 
 if has("gui_running")
-	set guifont=Lucida\ Console:h10:cRUSSIAN
+	set guifont=Droid\ Sans\ Mono\ 10
 	set guioptions-=m "remove menubar
 	set guioptions-=T "remove toolbar
-	colorscheme wombat256mod
+	colorscheme wombat256
 endif
 
 set number
@@ -30,9 +31,10 @@ call vundle#begin(path)
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'mitsuhiko/vim-jinja'
 
 call vundle#end()
 
@@ -40,15 +42,18 @@ call vundle#end()
 
 filetype plugin indent on
 syntax on
+colorscheme wombat256
 
 "------------------Global settings for indenting------------------
 
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
+let g:html_indent_inctags = "html,body,head,tbody" 
 
 "------------------Global settings for indenting------------------
 inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
 
 " Let's get ride of ARROWS
 noremap <Up> <NOP>
@@ -63,4 +68,8 @@ map <F3> :NERDTreeToggle<CR>
 
 
 "------------------Settings for vim-venv------------------
-let g:virtualenv_directory = 'd:\dev\venvs\'
+if has("win32")
+	let g:virtualenv_directory = 'd:\dev\venvs\'
+else
+	let g:virtualenv_directory = '~/.virtualenvs/'
+endif
