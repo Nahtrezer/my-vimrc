@@ -30,19 +30,24 @@ call vundle#begin(path)
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'klen/python-mode'
-Plugin 'jmcantrell/vim-virtualenv'
+" Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'lsdr/monokai'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mitsuhiko/vim-jinja'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
 "------------------Vundle plugins END------------------
+"------------------Vundle settings ends----------------
 
 filetype plugin indent on
 syntax on
-colorscheme wombat256
+colorscheme wombat256 
 
 "------------------Global settings for indenting------------------
 
@@ -61,9 +66,18 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+"Easy switch between buffers
+noremap <Tab> :bnext<CR>
+noremap <S-Tab> :bprevious<CR> 
+
+noremap <C-k> <C-w><Up>
+noremap <C-j> <C-w><Down>
+noremap <C-l> <C-w><Right>
+noremap <C-h> <C-w><Left>
+
 "------------------Settings for NERDTree------------------
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 map <F3> :NERDTreeToggle<CR>
 
 
@@ -73,3 +87,13 @@ if has("win32")
 else
 	let g:virtualenv_directory = '~/.virtualenvs/'
 endif
+
+"------------------Settings for Pymode------------------
+let g:pymode_python = 'python3' "set python version
+let g:pymode_lint_on_write = 0 "не проверять при каждом сохранении
+let g:pymode_folding = 0 "мне не нужен авто-фолдинг
+let g:pymode_rope_completion = 0 "не использовать автодополнение rope
+let g:pymode_virtualenv = 1 "turn off virtualenvautodetect
+
+"------------------Settings for Jedi------------------
+autocmd FileType python setlocal completeopt-=preview "no autodocumentation popup
