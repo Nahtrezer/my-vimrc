@@ -61,7 +61,7 @@ call vundle#end()
 
 filetype plugin indent on
 syntax on
-colorscheme wombat256
+colorscheme monokai
 
 "------------------Global settings for indenting------------------
 
