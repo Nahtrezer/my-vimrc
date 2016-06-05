@@ -71,6 +71,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+"Search of visualy selected text
+vnoremap // y/<C-R>"<CR>
+
 "Easy switch between buffers
 noremap <Tab> :bnext<CR>
 noremap <S-Tab> :bprevious<CR> 
